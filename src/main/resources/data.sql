@@ -5,6 +5,5 @@ INSERT INTO category (description) VALUES ('Fast Food');
 INSERT INTO unit_of_measure (description) VALUES ('Teaspoon');
 INSERT INTO unit_of_measure (description) VALUES ('Tablespoon');
 INSERT INTO unit_of_measure (description) VALUES ('Cup');
-INSERT INTO unit_of_measure (description) VALUES ('Pinch');
-INSERT INTO unit_of_measure (description) VALUES ('Ounce');
-INSERT INTO recipe (directions,serving) VALUES ('38 munites', 'hot');
+INSERT INTO unit_of_measure (description) VALUES ('Pint');
+INSERT INTO unit_of_measure (description) VALUES ('Dash');

@@ -1,29 +1,33 @@
 package guru.springframework.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 public class Recipe {
 
     private String description;
-    private String prepTime;
-    private String cookTime;
+    private Integer prepTime;
+    private Integer cookTime;
     private String serving;
     private String source;
     private String  url;
+
+    @Lob
     private String directions;
 
     @ManyToMany
     @JoinTable(name = "recipe_category",
             joinColumns = @JoinColumn(name = "recipe_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
-    private Set<Category> categories;
+    private Set<Category> categories = new HashSet<>();
 
     @Enumerated(value = EnumType.STRING)
     private  Difficulty difficulty;
     @Lob
     private Byte[] image;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
 
@@ -33,7 +37,7 @@ public class Recipe {
 
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
-    private Set<Ingredient> ingredients;
+    private Set<Ingredient> ingredients = new HashSet<>();
 
     //////////////////
 
@@ -71,19 +75,19 @@ public class Recipe {
         this.description = description;
     }
 
-    public String getPrepTime() {
+    public Integer getPrepTime() {
         return prepTime;
     }
 
-    public void setPrepTime(String prepTime) {
+    public void setPrepTime(Integer prepTime) {
         this.prepTime = prepTime;
     }
 
-    public String getCookTime() {
+    public Integer getCookTime() {
         return cookTime;
     }
 
-    public void setCookTime(String cookTime) {
+    public void setCookTime(Integer cookTime) {
         this.cookTime = cookTime;
     }
 
