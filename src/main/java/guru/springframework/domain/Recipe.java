@@ -7,7 +7,7 @@ import java.util.Set;
 public class Recipe {
 
     private String description;
-    private  String prepTime;
+    private String prepTime;
     private String cookTime;
     private String serving;
     private String source;
