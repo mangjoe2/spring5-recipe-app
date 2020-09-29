@@ -18,7 +18,6 @@ public class Notes {
         this.id = id;
     }
 
-    @Id
     public Long getId() {
         return id;
     }
